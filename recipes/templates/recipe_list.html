@@ -1,0 +1,21 @@
+<!-- recipes/templates/recipes/recipe_list.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recipe List</title>
+</head>
+<body>
+    <h1>Recipe List</h1>
+    <ul>
+        {% for recipe in recipes %}
+            <li>
+                <h2>{{ recipe.name }}</h2>
+                <p><strong>Ingredients:</strong> {{ recipe.ingredients }}</p>
+                <p><strong>Instructions:</strong> {{ recipe.instructions }}</p>
+                <p><strong>Cooking Time:</strong> {{ recipe.cooking_time }} minutes</p>
+                <p><strong>Difficulty:</strong> {{ recipe.difficulty }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
