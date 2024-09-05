@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CookMate - Your Recipe Companion</title>
+    <link rel="stylesheet" href="{% static 'styles/home.css' %}">
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to CookMate!</h1>
+        <p>Your ultimate recipe companion to help you cook like a pro.</p>
+    </header>
+
+    <section id="about">
+        <h2>What is CookMate?</h2>
+        <p>CookMate is designed to simplify your culinary experience. Whether you are an experienced chef or just starting out, CookMate provides a platform to discover, organize, and manage your recipes with ease.</p>
+        <div class="aquarium">
+            <div class="aquarium__table"></div>
+            <div class="aquarium__aquarium">
+                <div class="aquarium__water"></div>
+                <
+                <div class="aquarium__bubble"></div>
+            </div>
+            <div class="aquarium__drops">
+                <div class="aquarium__drop"></div>
+                <div class="aquarium__water-column"></div>
+                <div class="aquarium__splash"></div>
+                <div class="aquarium__splash"></div>
+            </div>
+            <div class="aquarium__sponge-box">
+                <div class="aquarium__body">
+                <div class="aquarium__body-stripe"></div>
+                <div class="aquarium__body-hole"></div>
+                </div>
+                <div class="aquarium__face">
+                <div class="aquarium__mouth"></div>
+                <div class="aquarium__smile"></div>
+                </div>
+            </div>
+            </div>
+
+            <!-- now    -->
+            
+            
+    </section>
+
+
+    <section id="features">
+        <h2>Features</h2>
+        <div class="feature">
+            <img src="{% static 'images/salad.jpg' %}" alt="Healthy Salad">
+            <h3>Healthy Recipes</h3>
+            <p>Explore a variety of nutritious recipes that are easy to make and perfect for any occasion.</p>
+        </div>
+        <div class="feature">
+            <img src="{% static 'images/cake.jpg' %}" alt="Delicious Cake">
+            <h3>Sweet Treats</h3>
+            <p>Satisfy your sweet tooth with our selection of mouth-watering desserts and baked goods.</p>
+        </div>
+        <div class="feature">
+            <img src="{% static 'images/burger.jpg' %}" alt="Delicious Burger">
+            <h3>Quick and Easy</h3>
+            <p>Need a quick fix? CookMate offers fast and easy recipes for when you're in a hurry.</p>
+        </div>
+    </section>
+
+    <section id="cta">
+        <h2>Join the CookMate Community</h2>
+        <p>Sign up today and start your cooking journey with us!</p>
+        <a href="{% url 'register' %}" class="btn">Sign Up</a>
+        <a href="{% url 'login' %}" class="btn">Log In</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 CookMate. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -10,57 +10,49 @@ from django.contrib import messages
 def home(request):
     return render(request, 'home.html')
 
-# def register(request):
-#     if request.method == 'POST':
-#         form = UserCreationForm(request.POST)
-#         if form.is_valid():
-#             user = form.save()
-#             login(request, user)
-#             return redirect('recipe_list')
-#     else:
-#         form = UserCreationForm()
-#     return render(request, 'register.html', {'form': form})
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('recipe_list')
+    else:
+        form = UserCreationForm()
+    return render(request, 'register.html', {'form': form})
 
 
 # users/views.py
 
 
-def login_view(request):
-    if request.method == 'POST':
-        form = AuthenticationForm(data=request.POST)
-        if form.is_valid():
-            user = form.get_user()
-            auth_login(request, user)
-            return redirect('recipe_list')
-    else:
-        form = AuthenticationForm()
-    return render(request, 'Users/login.html', {'form': form})
+def login(request):
+    return render(request, 'login.html')
 
 def profile(request):
     return render(request, 'profile.html')
 
 
 
-def index(request):
-    if request.method == 'POST':
-        # Handle registration logic
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        password_confirm = request.POST.get('password_confirm')
+# def index(request):
+#     if request.method == 'POST':
+#         # Handle registration logic
+#         username = request.POST.get('username')
+#         password = request.POST.get('password')
+#         password_confirm = request.POST.get('password_confirm')
         
-        if password != password_confirm:
-            messages.error(request, "Passwords do not match")
-            return redirect('index')
+#         if password != password_confirm:
+#             messages.error(request, "Passwords do not match")
+#             return redirect('index')
 
-        # Create the user
-        user = User.objects.create_user(username=username, password=password)
-        user.save()
+#         # Create the user
+#         user = User.objects.create_user(username=username, password=password)
+#         user.save()
 
-        # Log the user in
-        login(request, user)
+#         # Log the user in
+#         login(request, user)
 
-        # Redirect to a success page or home page
-        return redirect('home')
+#         # Redirect to a success page or home page
+#         return redirect('home')
 
-    # If the request is GET, render the React app
-    return render(request, 'index.html')
+#     # If the request is GET, render the React app
+#     return render(request, 'index.html')

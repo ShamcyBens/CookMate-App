@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | CookMate</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="{% static 'styles/login.css' %}">
+</head>
+<body>
+    <!-- Cartoon Video Positioned in the Background -->
+    <div class="cartoon-background">
+        <video class="cartoon" autoplay muted loop>
+            <source src="https://i.gifer.com/7aBi.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="container">
+        <!-- Header section with image and heading -->
+        <div class="header">
+            <img src="{% static 'images/food.jpeg' %}" alt="Food Image" class="header-image">
+            <h1 class="animate__animated animate__bounce">Hello Mate</h1>
+            <p>Ready To Make Your First Meal?</p>
+        </div>
+        <br>
+        <hr>
+        <br>
+
+        <!-- Registration form -->
+        <div class="form-container">
+            <form method="POST" class="register-form">
+                {% csrf_token %}
+                
+                <div class="form-group">
+                    <label for="id_username">Username</label>
+                    <input type="text" name="username" id="id_username" maxlength="150" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="id_password">Password</label>
+                    <input type="password" name="password1" id="id_password" required>
+                    <small>Password must be at least 8 characters long and not entirely numeric.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="id_password2">Confirm Password</label>
+                    <input type="password" name="password2" id="id_password2" required>
+                </div>
+
+                <button type="submit" class="submit-btn">Login</button>
+            </form>
+        </div>
+
+        <!-- Footer with extra information -->
+        <div class="footer">
+            <p>Don't have an account? <a href="{% url 'login' %}">Sign up here</a>.</p>
+        </div>
+    </div>
+</body>
+</html>
+
